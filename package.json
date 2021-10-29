@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "firebase": "^9.2.0",
+    "http-server": "^14.0.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "^9.21.0"
+  }
+}
