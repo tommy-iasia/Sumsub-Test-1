@@ -40,11 +40,20 @@
           .build();
         snsWebSdkInstance.launch("#sumsub-websdk-container");
       }
+	  
+	  const token = (function () {
+		  const searchParams = new URLSearchParams(window.location.search);
+		  
+		  const paramToken = searchParams.get('token');
+		  if (paramToken) {
+			return paramToken;
+		  }
 
-      const token = prompt(
-        "gimme the access token",
-        "_act-sbx-71ed70d5-6609-4e1b-9e50-74f9fa2c4c7e"
-      );
+		  return prompt(
+			"gimme the access token",
+			"_act-sbx-71ed70d5-6609-4e1b-9e50-74f9fa2c4c7e"
+		  );
+	  })();
 
       function getNewAccessToken() {
         return Promise.resolve(token);
